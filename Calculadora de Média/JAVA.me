@@ -1,6 +1,5 @@
-````java`
 import java.util.Scanner;
-public class Main {
+public class exercicio1 {
 
     public static void main(String[] args) {
 
@@ -24,28 +23,42 @@ public class Main {
         System.out.println("Digite a nota da API: ");
         api = sc.nextDouble();
 
-        total = (p1*0.5) + (e1*0.2) + (e2*0.3) + x + (sub*0.15);
+        //Calcula a base da operação
+        total = (p1*0.5) + (e1*0.2) + (e2*0.3) + x;
 
-        media = (total*0.5) + (api*0.5);
-
-        if (media < 6) {
-            System.out.println("Digite a nota do Exame Final: ");
-            exf = sc.nextDouble();
-            if (exf > media) {
-                media = exf;
-            }else{
-                media = total*0.5;
+        if (total < 6) {
+            total = total + (sub * 0.15);
+            if (total < 6) {
+                media = total * 0.5;
+            } else {
+                media = (total * 0.5) + (api * 0.5);
             }
+        }else {
+            media = (total * 0.5) + (api * 0.5);
         }
-        
+
+        //Caso aluno tenha feito a EXF analisa se é viável
+        System.out.println("Caso tenha realizado a EXF, digite a nota: ");
+        exf = sc.nextDouble();
+        if (exf > media) {
+            media = exf;
+        }
+
+        // Limita média para valores entre 0 e 10
+        if (media < 0) {
+            System.out.println("Erro!, Verificar se notas estão entre 0 e 10.");
+        } else if (media > 10) {
+            media = 10;
+        }
+
         if (media >= 6){
-            System.out.println("");
+            System.out.println();
             System.out.println("MÉDIA FINAL: " + media);
             System.out.println("==========================");
             System.out.println("APROVADO");
             System.out.println("==========================");
         }else{
-            System.out.println("");
+            System.out.println();
             System.out.println("MÉDIA FINAL: " + media);
             System.out.println("==========================");
             System.out.println("REPROVADO!");
@@ -53,4 +66,3 @@ public class Main {
         }
     }
 }
-```
