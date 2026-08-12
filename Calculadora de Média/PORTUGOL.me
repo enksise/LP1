@@ -1,0 +1,55 @@
+```
+Algoritmo "CalcularMedia"
+// Disciplina   : LP1
+// Professor    : Adriana
+// Descrição    : Calcula média do aluno
+// Autor(a)     : Eduardo Nakano
+// Data atual   : 11/08/2026
+
+Var
+// Seção de Declarações das variáveis
+p1,e1,e2, x, sub, api, exf, total, media:real
+
+Inicio
+// Solicita entrada do usuário
+escreval("Digite a nota da P1: ")
+leia(p1)
+escreval("Digite a nota da E1: ")
+leia(e1)
+escreval("Digite a nota da E2: ")
+leia(e2)
+escreval("Digite a nota das Atividade extras: ")
+leia(x)
+escreval("Digite a nota da Sub: ")
+leia(sub)
+escreval("Digite a nota da API: ")
+leia(api)
+
+// Cálculo da base da operação
+total <- p1*0.5 + e1*0.2 + e2*0.3 + x + sub*0.15
+
+// Verifica se a nota está acima da média e calcula a média final
+media <- total*0.5 + api*0.5
+
+se media < 6 entao
+    escreval("Digite a nota do Exame Final: ")
+    leia(exf)
+
+    se exf > media entao
+        media <- exf
+    fimse
+fimse
+
+// Exibe o resultado da operação para cada caso
+se media >= 6 entao
+    escreval("======= MÉDIA FINAL ========")
+    escreval(media)
+    escreval("======== Aprovado! =========")
+senao
+    escreval("======= MÉDIA FINAL ========")
+    escreval(media)
+    escreval("======== Reprovado =========")
+fimse
+
+Fimalgoritmo
+```

@@ -1,0 +1,56 @@
+````java`
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Cria um scanner para leitura da entrada do usuário
+        Scanner sc = new Scanner(System.in);
+
+        // Declara variável das notas
+        double p1, e1, e2, x, sub, api, exf, total, media;
+
+        //Solicita preenchimento das notas do aluno
+        System.out.println("Digite a nota da P1: ");
+        p1 = sc.nextDouble();
+        System.out.println("Digite a nota da E1: ");
+        e1 = sc.nextDouble();
+        System.out.println("Digite a nota da E2: ");
+        e2 = sc.nextDouble();
+        System.out.println("Digite a nota das Atividades extras: ");
+        x = sc.nextDouble();
+        System.out.println("Digite a nota da Sub: ");
+        sub = sc.nextDouble();
+        System.out.println("Digite a nota da API: ");
+        api = sc.nextDouble();
+
+        total = (p1*0.5) + (e1*0.2) + (e2*0.3) + x + (sub*0.15);
+
+        media = (total*0.5) + (api*0.5);
+
+        if (media < 6) {
+            System.out.println("Digite a nota do Exame Final: ");
+            exf = sc.nextDouble();
+            if (exf > media) {
+                media = exf;
+            }else{
+                media = total*0.5;
+            }
+        }
+        
+        if (media >= 6){
+            System.out.println("");
+            System.out.println("MÉDIA FINAL: " + media);
+            System.out.println("==========================");
+            System.out.println("APROVADO");
+            System.out.println("==========================");
+        }else{
+            System.out.println("");
+            System.out.println("MÉDIA FINAL: " + media);
+            System.out.println("==========================");
+            System.out.println("REPROVADO!");
+            System.out.println("==========================");
+        }
+    }
+}
+```
