@@ -1,0 +1,39 @@
+public class classes {
+    class terno{
+        private String cor;
+        private String tamanho;
+        private String tecido;
+
+        void abotoar(){
+            System.out.println("Terno abotoado.");
+            System.out.println();
+        }
+        void desabotoar(){
+            System.out.println("Terno desabotoado.");
+            System.out.println();
+        }
+        void pendurar(){
+            System.out.println("Terno pendurado.");
+            System.out.println();
+        }
+    }
+
+    class calca{
+        private String cor;
+        private String tamanho;
+        private String tecido;
+
+        void colocarCinto(){
+            System.out.println("Cinto colocado!");
+            System.out.println();
+        }
+        void abrirBolso(){
+            System.out.println("Bolso aberto! Verifique o que tem nele!");
+            System.out.println();
+        }
+        void ajustar(){
+            System.out.println("Calça ajustada para suas medidas!");
+            System.out.println();
+        }
+    }
+}
